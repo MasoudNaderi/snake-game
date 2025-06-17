@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #e3f2fd;
+}
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #293447;
+}
+
+.game-details {
+  color: #b8c6dc;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+  background: #212837;
+}
+
+/* 
+#03A6A1
+#FF4F0F
+#FFC107
+#725CAD
+#eb8500
+*/
+p {
+  color: #eb8500;
+}
+
+.snake {
+  background: rgb(67, 207, 11);
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all ease-in-out 0.4s;
+}
+
+.head span {
+  position: relative;
+  padding-bottom: 10px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 1px;
+}
+.head span::before {
+  position: absolute;
+  content: "";
+  background-color: #000;
+  left: 40%;
+  top: 40%;
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+}
+
+.message {
+  position: fixed;
+  opacity: 0;
+  top: 10%;
+  right: 20%;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 6px;
+}
+.fade-in {
+  animation: fade-in 0.6s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(5px);
+  }
+}
